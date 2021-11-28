@@ -14,6 +14,6 @@ class Franc(amount: Int): Money(amount) {
 
 open class Money(protected val amount: Int) {
 
-    override fun equals(other: Any?) = (other as? Money)?.amount == this.amount
+    override fun equals(other: Any?) = (other as? Money)?.amount == this.amount && this.javaClass == other.javaClass
 
 }

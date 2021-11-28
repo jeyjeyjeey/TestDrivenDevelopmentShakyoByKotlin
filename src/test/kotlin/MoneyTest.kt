@@ -30,4 +30,9 @@ class MoneyTest {
         Assertions.assertTrue(Franc(5) == (Franc(5)))
         Assertions.assertFalse(Franc(5) == (Franc(6)))
     }
+
+    @Test
+    fun testEqualityFrancAndDollar() {
+        Assertions.assertFalse(Dollar(5).equals(Franc(5)))
+    }
 }
