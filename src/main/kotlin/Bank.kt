@@ -2,5 +2,6 @@ package money
 
 class Bank {
 
-    fun reduce(exp: Expression, currency: String) = Money.dollar(10)
+    fun reduce(source: Expression, to: String): Money = source.reduce(to)
+
 }
