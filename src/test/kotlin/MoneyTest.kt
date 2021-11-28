@@ -7,28 +7,28 @@ class MoneyTest {
 
     @Test
     fun testDollarMultiplication() {
-        val five = Dollar(5)
-        Assertions.assertEquals(Dollar(10), five.times(2))
-        Assertions.assertEquals(Dollar(15), five.times(3))
+        val five = Money.dollar(5)
+        Assertions.assertEquals(Money.dollar(10), five.times(2))
+        Assertions.assertEquals(Money.dollar(15), five.times(3))
     }
 
     @Test
     fun testDollarEquality() {
-        Assertions.assertTrue(Dollar(5) == (Dollar(5)))
-        Assertions.assertFalse(Dollar(5) == (Dollar(6)))
+        Assertions.assertTrue(Money.dollar(5) == (Money.dollar(5)))
+        Assertions.assertFalse(Money.dollar(5) == (Money.dollar(6)))
     }
 
     @Test
     fun testFrancMultiplication() {
-        val five = Franc(5)
-        Assertions.assertEquals(Franc(10), five.times(2))
-        Assertions.assertEquals(Franc(15), five.times(3))
+        val five = Money.franc(5)
+        Assertions.assertEquals(Money.franc(10), five.times(2))
+        Assertions.assertEquals(Money.franc(15), five.times(3))
     }
 
     @Test
     fun testFrancEquality() {
-        Assertions.assertTrue(Franc(5) == (Franc(5)))
-        Assertions.assertFalse(Franc(5) == (Franc(6)))
+        Assertions.assertTrue(Money.franc(5) == (Money.franc(5)))
+        Assertions.assertFalse(Money.franc(5) == (Money.franc(6)))
     }
 
     @Test
