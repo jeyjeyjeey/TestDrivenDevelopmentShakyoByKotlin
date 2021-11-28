@@ -1,13 +1,5 @@
 package money
 
-class Dollar(amount: Int, currency: String): Money(amount, currency) {
-
-}
-
-class Franc(amount: Int, currency: String): Money(amount, currency) {
-
-}
-
 open class Money(protected val amount: Int, open val currency: String) {
 
     override fun equals(other: Any?) = (other as? Money)?.amount == this.amount && this.currency == other.currency
