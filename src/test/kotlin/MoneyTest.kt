@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Assertions
 class MoneyTest {
 
     @Test
-    fun testMultiplication() {
+    fun testDollarMultiplication() {
         val five = Dollar(5)
         Assertions.assertEquals(Dollar(10), five.times(2))
         Assertions.assertEquals(Dollar(15), five.times(3))
     }
 
     @Test
-    fun testEquality() {
+    fun testDollarEquality() {
         Assertions.assertTrue(Dollar(5) == (Dollar(5)))
         Assertions.assertFalse(Dollar(5) == (Dollar(6)))
     }
