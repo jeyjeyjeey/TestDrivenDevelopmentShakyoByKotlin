@@ -33,6 +33,12 @@ class MoneyTest {
 
     @Test
     fun testEqualityFrancAndDollar() {
-        Assertions.assertFalse(Dollar(5).equals(Franc(5)))
+        Assertions.assertFalse(Money.dollar(5).equals(Money.franc(5)))
+    }
+
+    @Test
+    fun testCurrency() {
+        Assertions.assertEquals("USD", Money.dollar(1).currency)
+        Assertions.assertEquals("CHF", Money.franc(1).currency)
     }
 }
