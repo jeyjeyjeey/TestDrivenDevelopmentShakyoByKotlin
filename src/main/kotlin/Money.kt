@@ -1,6 +1,6 @@
 package money
 
-open class Money(protected val amount: Int, open val currency: String) {
+class Money(private val amount: Int, val currency: String): Expression {
 
     override fun equals(other: Any?) = (other as? Money)?.amount == this.amount && this.currency == other.currency
 
@@ -10,5 +10,7 @@ open class Money(protected val amount: Int, open val currency: String) {
     }
 
     fun times(multiplier: Int) = Money(amount * multiplier, currency)
+
+    fun plus(addend: Money): Expression = Money(amount + addend.amount, currency)
 
 }
