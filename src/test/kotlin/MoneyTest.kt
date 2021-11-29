@@ -2,6 +2,7 @@ package money
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions
+import kotlin.test.assertEquals
 
 class MoneyTest {
 
@@ -54,5 +55,18 @@ class MoneyTest {
         val bank = Bank()
         val result: Money = bank.reduce(Money.dollar(1), "USD")
         Assertions.assertEquals(Money.dollar(1), result)
+    }
+
+    @Test
+    fun testReduceMoneyDifferentCurrency() {
+        val bank = Bank()
+        bank.addRate("CHF", "USD", 2)
+        val result: Money = bank.reduce(Money.franc(2), "USD")
+        Assertions.assertEquals(Money.dollar(1), result)
+    }
+
+    @Test
+    fun testIdentityRate() {
+        assertEquals(1, Bank().rate("USD", "USD"))
     }
 }
