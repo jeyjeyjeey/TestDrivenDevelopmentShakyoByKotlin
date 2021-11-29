@@ -6,7 +6,7 @@ class Bank {
 
     private val rates: MutableMap<Pair<String, String>, Int> = HashMap()
 
-    fun reduce(source: Expression, to: String): Money = source.reduce(this, to)
+    fun reduce(source: Expression, to: String): Expression = source.reduce(this, to)
 
     fun addRate(from: String, to: String, rate: Int) = rates.put(Pair(from, to), rate)
 
