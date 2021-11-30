@@ -75,7 +75,7 @@ class MoneyTest {
     @Test
     fun testSumPlusMoney() {
         val fiveBucks = Money.dollar(5)
-        val sum: Sum = Sum(Money.dollar(5), Money.franc(10))
+        val sum = Sum(Money.dollar(5), Money.franc(10))
         val bank = Bank()
         bank.addRate("CHF", "USD", 2)
         val result = sum.plus(fiveBucks).reduce(bank, "USD")

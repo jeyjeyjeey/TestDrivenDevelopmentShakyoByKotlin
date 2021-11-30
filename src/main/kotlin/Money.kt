@@ -1,10 +1,8 @@
 package money
 
-class Money(val amount: Int, val currency: String): Expression {
+data class Money(val amount: Int, val currency: String): Expression {
 
     override fun toString() = "amount: $amount, currency: $currency"
-
-    override fun equals(other: Any?) = (other as? Money)?.amount == this.amount && this.currency == other.currency
 
     companion object {
         fun dollar(amount: Int) = Money(amount, "USD")
